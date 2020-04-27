@@ -1,3 +1,5 @@
+//This part of the code only includes the libraries and initialization of variables.
+
 ************************************************************************************************************
 *//ARDUINO LINE FOLLOWING CAR//                                                                            *
 *// YOU HAVE TO INSTALL THE AFMOTOR LIBRARY BEFORE UPLOAD THE CODE//                                       *                       
@@ -5,8 +7,8 @@
 *//our Integrated Development Environment common to all our boards and                                     * 
 *//running both online and offline. For more information on how to get                                     *
 *//started with the Arduino Software visit the wesite https://www.arduino.cc/en/Guide/HomePage             *
-*//This project was done by Nirmal Thapa, Diya Shrestha, Avash Bhaju, Devin Becker and Nicoole under the   *
-*//supervision of the professor Michel Hart.                                                               *
+*//This project was done by Nirmal Thapa, Diya Shrestha, Avash Bhaju, Devin Becker and Nicole under the   *
+*//supervision of the Professor Hart.                                                               *
 ************************************************************************************************************
 //including the libraries
 #include <AFMotor.h>
@@ -42,131 +44,6 @@ void loop(){
   
   Serial.println(digitalRead(right));
 
-  //line detected by both
-  if(digitalRead(left)==0 && digitalRead(right)==0){
-    //Forward
-    motor1.run(FORWARD);
-    
-    motor1.setSpeed(150);
-    
-    motor2.run(BACKWARD);
-    
-    motor2.setSpeed(150);
-    
-    motor3.run(FORWARD);
-    
-    motor3.setSpeed(150);
-    
-    motor4.run(FORWARD);
-    
-    motor4.setSpeed(150);
-
-    motor1.run(FORWARD);
-    
-    motor1.setSpeed(200);
-    
-    motor2.run(BACKWARD);
-    
-    motor2.setSpeed(200);
-    
-    motor3.run(FORWARD);
-    
-    motor3.setSpeed(200);
-    
-    motor4.run(BACKWARD);
-    
-    motor4.setSpeed(200);
-  }
-  //line detected by left sensor
-  else if(digitalRead(left)==0 && !analogRead(right)==0){
-    //turn left
-    motor1.run(FORWARD);
-    
-    motor1.setSpeed(200);
-    
-    motor2.run(FORWARD);
-    
-    motor2.setSpeed(200);
-    
-    motor3.run(BACKWARD);
-    
-    motor3.setSpeed(200);
-    
-    motor4.run(BACKWARD);
-    
-    motor4.setSpeed(200);
-
-    motor1.run(FORWARD);
-    
-    motor1.setSpeed(150);
-    
-    motor2.run(FORWARD);
-    
-    motor2.setSpeed(150);
-    
-    motor3.run(BACKWARD);
-    
-    motor3.setSpeed(150);
-    
-    motor4.run(BACKWARD);
-    
-    motor4.setSpeed(150);
-  }
-  //line detected by right sensor
-  else if(!digitalRead(left)==0 && digitalRead(right)==0){
-    //turn right
-    motor1.run(BACKWARD);
-    
-    motor1.setSpeed(200);
-    
-    motor2.run(BACKWARD);
-    
-    motor2.setSpeed(200);
-    
-    motor3.run(FORWARD);
-    
-    motor3.setSpeed(200);
-    
-    motor4.run(FORWARD);
-    
-    motor4.setSpeed(200);
-
-    motor1.run(BACKWARD);
-    
-    motor1.setSpeed(150);
-    
-    motor2.run(BACKWARD);
-    
-    motor2.setSpeed(150);
-    
-    motor3.run(FORWARD);
-    
-    motor3.setSpeed(150);
-    
-    motor4.run(FORWARD);
-    
-    motor4.setSpeed(150);
-   
-  }
-  //line detected by none
-  else if(!digitalRead(left)==0 && !digitalRead(right)==0){
-    //stop
-    motor1.run(RELEASE);
-    
-    motor1.setSpeed(0);
-    
-    motor2.run(RELEASE);
-    
-    motor2.setSpeed(0);
-    
-    motor3.run(RELEASE);
-    
-    motor3.setSpeed(0);
-    
-    motor4.run(RELEASE);
-    
-    motor4.setSpeed(0);
-   
-  }
+  
   
 }
