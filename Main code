@@ -7,8 +7,14 @@
 *//our Integrated Development Environment common to all our boards and                                     * 
 *//running both online and offline. For more information on how to get                                     *
 *//started with the Arduino Software visit the wesite https://www.arduino.cc/en/Guide/HomePage             *
-*//This project was done by Nirmal Thapa, Diya Shrestha, Avash Bhaju, Devin Becker and Nicole under the   *
-*//supervision of the Professor Hart.                                                               *
+*//This project was done by Nirmal Thapa, Diya Shrestha, Avash Bhaju, Devin Becker and Nicole under the    *
+*//supervision of the Professor Hart.                                                                      *  
+*//References:                                                                                             *
+*//https://www.youtube.com/watch?v=jsGG6-vXaXo                                                             *                                                                                                         *
+*//https://www.youtube.com/watch?v=OA0mJi0Q6GI                                                             *
+*//https://www.youtube.com/watch?v=t7k9D1jDEtk&t=8s                                                        *                                                 *
+*//https://projectiot123.com/2019/03/25/l298-motor-driver-simulation-in-proteus/                           *                                                                                                        *
+*//https://circuitdigest.com/microcontroller-projects/line-follower-robot-using-arduino                    *
 ************************************************************************************************************
 //including the libraries
 #include <AFMotor.h>
@@ -19,13 +25,13 @@
 #define right A1
 
 //defining motors and assigning their ports in Motor Driver
-AF_DCMotor motor1(1, MOTOR12_1KHZ); 
+AF_DCMotor Motor_A(A, MOTOR12_1KHZ); 
 
-AF_DCMotor motor2(2, MOTOR12_1KHZ);
+AF_DCMotor Motor_B(B, MOTOR12_1KHZ);
 
-AF_DCMotor motor3(3, MOTOR34_1KHZ);
+AF_DCMotor Motor_C(C, MOTOR34_1KHZ);
 
-AF_DCMotor motor4(4, MOTOR34_1KHZ);
+AF_DCMotor Motor_D(D, MOTOR34_1KHZ);
 
 void setup() {
   //declaring pin types
@@ -39,7 +45,7 @@ void setup() {
 }
 
 void loop(){
-  //printing values of the sensors to the serial monitor
+  //Values of the sensors are printed to the serial monitor
   Serial.println(digitalRead(left));
   
   Serial.println(digitalRead(right));
